@@ -1,3 +1,10 @@
+* {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
 .underline {
     text-decoration: underline;
 }
@@ -30,8 +37,15 @@ h5,
 h6,
 p,
 span,
-li {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+li,
+a,
+b {
+    font-family: "Impact", fantasy;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 32px;
 }
 
 .profile h1 {
@@ -100,10 +114,6 @@ div.container {
     height: 9em;
 }
 
-.profile_img:hover {
-    filter: grayscale();
-}
-
 .image:hover {
     filter: drop-shadow(7px 5px 4px rgba(24, 24, 24, 0.8));
 }
@@ -116,7 +126,6 @@ div.container {
 .status,
 .status:visited,
 .status:link {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 20px;
     text-align: center;
     text-decoration: none;
@@ -136,7 +145,7 @@ footer {
     min-height: 50px;
 }
 
-footer a:visited, a:active, a:link {
+footer a:visited, a:active, a:link a:hover {
     color: whitesmoke;
 }
 
@@ -148,11 +157,11 @@ footer div {
 }
 
 footer div a {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 15px;
     margin: auto;
     margin-left: 10px;
     display: flex;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 header {
@@ -178,10 +187,16 @@ header div {
 
 header div a {
     z-index: 200;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 20px;
+    font-size: 25px;
     margin: auto;
     display: inline-block;
+    transition: font-size 0.5s;
+}
+
+header div a:hover {
+    color: white;
+    font-size: 35px;
+    transition: font-size 0.5s;
 }
 
 header div img {
@@ -201,4 +216,12 @@ header div img {
         width: 8em;
         height: 8em;
     }
+}
+
+.abt_me_txt {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.abt_me_txt2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
