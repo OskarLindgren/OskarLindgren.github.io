@@ -3,6 +3,7 @@
     --small_image_h: 100px;
     --large_image_w: 310px;
     --large_image_h: 100px; 
+    --rick_roll: 0;
 }
 
 * {
@@ -73,6 +74,8 @@ h2 {
 
 .icons {
     margin: auto;
+    margin-top: 25%;
+    margin-bottom: 50%;
 }
 
 div.container {
@@ -108,6 +111,16 @@ div.container {
     display: inline-block;
     width: 9em;
     height: 9em;
+}
+
+.profile_img:hover {
+    transition: width 5s;
+    transition-delay: 2s;
+    width: 1000px;
+}
+
+.profile_img:hover::after {
+    filter: grayscale()
 }
 
 .image:hover {
@@ -160,6 +173,12 @@ footer div a {
     font-family: 'Courier New', Courier, monospace;
 }
 
+footer div img {
+    width: 50px;
+    height: 50px;
+    padding-right: 5px;
+}
+
 header {
     z-index: 200;
     bottom: 0px;
@@ -207,32 +226,20 @@ header div img {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.abt_me_txt:hover {
-    background-color: red;
-    color: white;
-}
-
-.abt_me_txt2:hover {
-    background-color: red;
-    color: white;
-}
-
 .abt_me_txt3:hover {
-    background-color: blue;
-    color: white;
     font-size: 20px;
 }
 
 .s_image {
     width: var(--small_image_w);
     height: var(--small_image_h);
-    filter: grayscale();
+    filter: brightness(0)
 }
 
 .l_image {
     width: var(--large_image_w);
     height: var(--large_image_h);
-    filter: grayscale();
+    filter: brightness(0)
 }
 
 .s_image:hover, .l_image:hover {
@@ -253,7 +260,31 @@ header div img {
     color: black;
 }
 
+
+.burger {
+    display: None;
+}
+
+
+.or_text {
+    padding: 50px;
+    padding-top: 110px;
+    
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 @media screen and (max-width: 500px) {
+
+    h2 {
+        margin-top: 50px;
+    }
+
     .icon {
         width: 80px;
         padding: 10px;
@@ -265,13 +296,27 @@ header div img {
         padding-right: 7px;
     }
 
-    header div a {
-        font-size: 20px;
+    .icons_home {
+        max-width: 210px;
+        padding-left: 7px;
+        padding-right: 7px; 
     }
+
+    /*
+    header .desktop{
+        display: none
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+    }
+    */
+
+    /* Make the hamburger, hamburger */
     
-    header div a:hover {
-        font-size: 25px;
-    }
 
     .l_image {
         width: 232px;
@@ -285,6 +330,14 @@ header div img {
 
     .image_text {
         font-size: 26px;
+    }
+
+    .or_text {
+        padding-top: 190px;
+    }
+
+    form {
+        margin-top: 75px;
     }
 
 }
