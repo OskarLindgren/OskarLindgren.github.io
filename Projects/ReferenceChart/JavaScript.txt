@@ -1,1 +1,152 @@
-JS code for ReferenceChart
+<span class="token comment">// This javascript script will show the basics of javascript!</span>
+
+<span class="token comment">// importing modules</span>
+<span class="token comment">// we don't have modules in javascript, but we have something similar called 'libraries'</span>
+<span class="token comment">// we can import them by using the 'import' keyword</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> readline <span class="token keyword">from</span> <span class="token string">'node:readline/promises'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> stdin <span class="token keyword">as</span> input<span class="token punctuation">,</span> stdout <span class="token keyword">as</span> output <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'node:process'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// writing Hello World!</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// javascript automatically adds a newline at the end of a console.log statement</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// we can do this to create a blank line</span>
+
+<span class="token comment">// using variables</span>
+
+<span class="token comment">// var varaibleName = value; (this is accesible through out the whole code)</span>
+<span class="token comment">// let variableName = value; (this is only accesible in it's own block)</span>
+<span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span> <span class="token comment">// this is a number, javascript doesn't need you to specify types. It figures it out on it's own</span>
+<span class="token keyword">var</span> firstName <span class="token operator">=</span> <span class="token string">"Oskar"</span><span class="token punctuation">;</span> <span class="token comment">// this is a string</span>
+<span class="token keyword">var</span> lastName <span class="token operator">=</span> <span class="token string">'Lindgren'</span><span class="token punctuation">;</span> <span class="token comment">// we can also use single quotes!</span>
+<span class="token keyword">var</span> favoriteActivities <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Coding"</span><span class="token punctuation">,</span> <span class="token string">"Sleeping"</span><span class="token punctuation">,</span> <span class="token string">"Drinking coffe"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// we can make an array of strings like this</span>
+<span class="token keyword">var</span> favoriteNumbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">256</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// or an array of numbers like this!</span>
+<span class="token keyword">var</span> favoriteThings <span class="token operator">=</span> <span class="token punctuation">[</span>favoriteActivities<span class="token punctuation">,</span> favoriteNumbers<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// we can even make an array of arrays!</span>
+<span class="token keyword">var</span> myTuple <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// javascript doesn't have tuple, but we can use array instead</span>
+<span class="token keyword">var</span> myFloat <span class="token operator">=</span> <span class="token number">1.2</span><span class="token punctuation">;</span> <span class="token comment">// this is a float, it's a number with a decimal point!</span>
+
+<span class="token comment">// concatenating variables</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"My name is "</span> <span class="token operator">+</span> firstName <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> lastName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// + means that we're adding or "concatenating" to the string</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">My name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>firstName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>lastName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// we can also use template literals</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">My name is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>firstName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>lastName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> I am </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> years old!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// we can even use multiple types of variables!</span>
+
+<span class="token comment">// user input</span>
+
+<span class="token comment">// first we need to create a reader</span>
+<span class="token keyword">const</span> rl <span class="token operator">=</span> readline<span class="token punctuation">.</span><span class="token function">createInterface</span><span class="token punctuation">(</span><span class="token punctuation">{</span>input<span class="token punctuation">,</span> output<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> userName <span class="token operator">=</span> <span class="token keyword">await</span> rl<span class="token punctuation">.</span><span class="token function">question</span><span class="token punctuation">(</span><span class="token string">"What's your name?\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// unlike console.log(), question() will not add a new line, so we have to do it ourselves </span>
+<span class="token comment">// we can also print out the question, then ask for input</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"How old are you? - "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> userAge <span class="token operator">=</span> <span class="token keyword">await</span> rl<span class="token punctuation">.</span><span class="token function">question</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// we need to pass something as out question though, so we just pass an empty string</span>
+userAge <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>userAge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// we wanna make sure that userAge is a number, aka an integer!</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// if statments</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>userAge <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// if userAge is less than 5</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"You're younger than 5!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userAge <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// if userAge is less than OR equal to 10</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"You're still pretty young!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userAge <span class="token operator">&gt;</span> <span class="token number">11</span> <span class="token operator">&amp;&amp;</span> userAge <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// if userAge is between 11 and 20 (12,13,14,15,16,17,18,19 - NOT 11 or 20)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"You're between the age of 11 and 20"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userAge <span class="token operator">&gt;=</span> <span class="token number">20</span> <span class="token operator">&amp;&amp;</span> userAge <span class="token operator">&lt;=</span> <span class="token number">25</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// this will take 20, 21, 22, 23, 24 and 25</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"You're an grown up!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userAge <span class="token operator">!==</span> <span class="token number">69</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// this is how we check if something ISN'T true</span>
+    <span class="token comment">// and this is how we do nothing!</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">// if none of the above apply</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"You're pretty old!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// loops!</span>
+
+<span class="token comment">// for loop</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// counting from 1 to 10 (stops when it reaches ten, meaning it won't do anything when it reaches 10)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Loop iteration: "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// while loop</span>
+<span class="token keyword">var</span> timesRan <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// will continue forever</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"I'm in a loop"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    timesRan <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// increase timesRan by one</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timesRan <span class="token operator">&gt;=</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// breaks out of the loop</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Phew, I broke out of the loop!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// functions</span>
+<span class="token keyword">function</span> <span class="token function">myFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// we make the function like this</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"This is a function!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// then we tell it what to do</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">myFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// then we can call it</span>
+
+<span class="token comment">// we can pass an argument like this</span>
+<span class="token keyword">function</span> <span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token parameter">thing_to_say</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// we will use the variable "thing_to_say" inside the function, then javascript will forget it. We're also saying that the variable should only accept inputs of the type string</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>thing_to_say<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token string">"I like javascript!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// then we can call it like this</span>
+
+<span class="token comment">// we can also define a "default state" like this</span>
+
+<span class="token keyword">function</span> <span class="token function">anotherFunction</span><span class="token punctuation">(</span>argument <span class="token operator">=</span> <span class="token string">"Nothing was passed"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>argument<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">anotherFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">anotherFunction</span><span class="token punctuation">(</span><span class="token string">"Something was passed!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// a function can also "return" a value</span>
+
+<span class="token keyword">function</span> <span class="token function">addTwoNumbers</span><span class="token punctuation">(</span><span class="token parameter">num1<span class="token punctuation">,</span> num2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">addTwoNumbers</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// let's print out the thing it returns!</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// try statement</span>
+<span class="token comment">// if something might not always work, we can use a try statement</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span> <span class="token comment">// try to do this</span>
+    <span class="token keyword">let</span> temp <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"I could add 1+1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// if it fails, do this instead</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"I failed to add 1+1 :("</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span> <span class="token comment">// regardless of result, do this</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Well that's over!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// this will never fail, because computers are excelent at math, we'll see later how useful it can be!</span>
+
+<span class="token comment">// let's jump back to the userAge problem!</span>
+<span class="token comment">// we can force the user to only enter a number like this:</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> userAge <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>rl<span class="token punctuation">.</span><span class="token function">question</span><span class="token punctuation">(</span><span class="token string">"How old are you?\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// it will first try this</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span> <span class="token comment">// then this</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// if at any point it fails, it will stop trying and to this instead</span>
+        console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"That's not a number!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Let's get back to lists!</span>
+<span class="token comment">// we can split a sentance into a lsit of words like this</span>
+<span class="token keyword">var</span> sentance <span class="token operator">=</span> <span class="token string">"I really like to write code!"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> words <span class="token operator">=</span> sentance<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// split it at every space character</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Wow, list's look kinda weird, huh?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// we can also grab just one part of a list</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this will grab the thing at the 0th position</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>words<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this will grab the thing at the 3rd position</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// when all is said and done, we should close our reader and let it rest</span>
+rl<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
