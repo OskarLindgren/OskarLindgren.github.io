@@ -1,11 +1,11 @@
 <span class="token comment">// we need to include some standard libraries to be able to do things</span>
-#include &ltstdio<span class="token punctuation">.</span>h<span class="token operator">&gt;</span> <span class="token comment">// this one lets us write to the screen aswell as get user input</span>
-#include &ltWindows<span class="token punctuation">.</span>h<span class="token operator">&gt;</span> <span class="token comment">// this one is needed for some windows functions</span>
-#include &ltstring<span class="token punctuation">.</span>h<span class="token operator">&gt;</span> <span class="token comment">// adds support for modifying strings in certain ways</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token expression"><span class="token operator">&lt;</span>stdio<span class="token punctuation">.</span>h<span class="token operator">&gt;</span> </span><span class="token comment">// this one lets us write to the screen aswell as get user input</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token expression"><span class="token operator">&lt;</span>Windows<span class="token punctuation">.</span>h<span class="token operator">&gt;</span> </span><span class="token comment">// this one is needed for some windows functions</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token expression"><span class="token operator">&lt;</span>string<span class="token punctuation">.</span>h<span class="token operator">&gt;</span> </span><span class="token comment">// adds support for modifying strings in certain ways</span></span>
 
 <span class="token comment">// now let's disable some annoying warnings we don't wanna see when compiling</span>
-#pragma <span class="token function">warning</span><span class="token punctuation">(</span>disable<span class="token operator">:</span> <span class="token number">4996</span><span class="token punctuation">)</span>
-#pragma <span class="token function">warning</span><span class="token punctuation">(</span>disable<span class="token operator">:</span> <span class="token number">6031</span><span class="token punctuation">)</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression"><span class="token function">warning</span><span class="token punctuation">(</span>disable<span class="token operator">:</span> <span class="token number">4996</span><span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">pragma</span> <span class="token expression"><span class="token function">warning</span><span class="token punctuation">(</span>disable<span class="token operator">:</span> <span class="token number">6031</span><span class="token punctuation">)</span></span></span>
 
 <span class="token comment">// skip this part and come back to it later. You'll know when to come back here :)</span>
 <span class="token comment">// this is how we define a function</span>
@@ -15,19 +15,19 @@
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I was ran in a function!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">void</span> <span class="token function">anotherFunc</span><span class="token punctuation">(</span><span class="token parameter">char string<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span>
+<span class="token keyword">void</span> <span class="token function">anotherFunc</span><span class="token punctuation">(</span><span class="token keyword">char</span> string<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> string<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">// we can also make a function return a value</span>
 <span class="token comment">// were using int because it returns an int</span>
-int <span class="token function">addTwoNumbers</span><span class="token punctuation">(</span><span class="token parameter">int num1<span class="token punctuation">,</span> int num2</span><span class="token punctuation">)</span>
+<span class="token keyword">int</span> <span class="token function">addTwoNumbers</span><span class="token punctuation">(</span><span class="token keyword">int</span> num1<span class="token punctuation">,</span> <span class="token keyword">int</span> num2<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>num1 <span class="token operator">+</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-int <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token comment">// this is our main function, this is where the computer will start reading the code. we pass void to tell the computer that there are no parameters passed</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token comment">// this is our main function, this is where the computer will start reading the code. we pass void to tell the computer that there are no parameters passed</span>
 <span class="token punctuation">{</span>
     <span class="token comment">// writing Hello World!</span>
     <span class="token comment">// in c you have to finish every call with a ;</span>
@@ -36,23 +36,23 @@ int <span class="token function">main</span><span class="token punctuation">(</s
 
     <span class="token comment">// using variables</span>
     <span class="token comment">// type variableName = value</span>
-    int age <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">17</span><span class="token punctuation">;</span>
     <span class="token comment">// strings don't exist in native c, so we need to make an array of chars with a specific length +1 for the null terminator '\0'. (the compiler adds this by itself, so don't worry about it, jsut leave space for it)</span>
-    char name<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Oskar"</span><span class="token punctuation">;</span> <span class="token comment">// we use double quotes for strings</span>
-    char lastName<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Lindgren"</span><span class="token punctuation">;</span>
-    char firstLetter <span class="token operator">=</span> <span class="token string">'o'</span><span class="token punctuation">;</span> <span class="token comment">// and single quotes for chars</span>
-    float myFloat <span class="token operator">=</span> <span class="token number">1.2</span><span class="token punctuation">;</span>    <span class="token comment">// These two are basically the same thing, but the "double" allows for double tha amount of data (4 -&gt; 8 bytes), meaning you can have more precision (7 -&gt; 15 digits precision)</span>
-    double myDouble <span class="token operator">=</span> <span class="token number">1.2</span><span class="token punctuation">;</span>  <span class="token comment">// ^^</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Oskar"</span><span class="token punctuation">;</span> <span class="token comment">// we use double quotes for strings</span>
+    <span class="token keyword">char</span> lastName<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"Lindgren"</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> firstLetter <span class="token operator">=</span> <span class="token char">'o'</span><span class="token punctuation">;</span> <span class="token comment">// and single quotes for chars</span>
+    <span class="token keyword">float</span> myFloat <span class="token operator">=</span> <span class="token number">1.2</span><span class="token punctuation">;</span>    <span class="token comment">// These two are basically the same thing, but the "double" allows for double tha amount of data (4 -&gt; 8 bytes), meaning you can have more precision (7 -&gt; 15 digits precision)</span>
+    <span class="token keyword">double</span> myDouble <span class="token operator">=</span> <span class="token number">1.2</span><span class="token punctuation">;</span>  <span class="token comment">// ^^</span>
 
     <span class="token comment">// concatinating variables</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"My name is %s %s I am %d years old!\n"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> lastName<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// we need to write %TYPE and then pass the variable we want to use</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token comment">// user input</span>
-    char userName<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// we're allowing for up to 128 characters in the username. Some compilers allow you to write "char* userName" this will dynamically allocate the correct size, but all compilers allow this method</span>
+    <span class="token keyword">char</span> userName<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// we're allowing for up to 128 characters in the username. Some compilers allow you to write "char* userName" this will dynamically allocate the correct size, but all compilers allow this method</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"What's your name?\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>userName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// we're looking for the type string, and we want to store it in the "userName" variable. Note the usage of the &amp; sign</span>
-    int userAge<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> userAge<span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"How old are you?\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>userAge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this time we're looking for the type digit</span>
     <span class="token comment">// *it's worth noting that scanf() is a very unsafe function, but for this purpose it will do just fine</span>
@@ -87,13 +87,13 @@ int <span class="token function">main</span><span class="token punctuation">(</s
 
     <span class="token comment">// loops!</span>
     <span class="token comment">// for loop</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment">// this will start i at 0, and add 1 untill i is no longer less than 10</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment">// this will start i at 0, and add 1 untill i is no longer less than 10</span>
     <span class="token punctuation">{</span>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Loop iteration: %d\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token comment">//while loop</span>
-    int runTimes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> runTimes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// run forever</span>
     <span class="token punctuation">{</span>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I'm in a loop!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
