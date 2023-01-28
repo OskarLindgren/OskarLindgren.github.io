@@ -1,1 +1,66 @@
-Python code for TwentyOne
+<span class="token keyword">import</span> os
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"How many people are playing?"</span><span class="token punctuation">)</span>
+player_count <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># make the list of player scores</span>
+player_scores <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>player_count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    player_scores<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    
+<span class="token keyword">def</span> <span class="token function">highscores</span><span class="token punctuation">(</span>winning_player<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># add 1 point to the losing player</span>
+    player_scores<span class="token punctuation">[</span>winning_player<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+
+    <span class="token comment"># print out the scores</span>
+    <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>player_count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Player </span><span class="token interpolation"><span class="token punctuation">{</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string"> has </span><span class="token interpolation"><span class="token punctuation">{</span>player_scores<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token string"> points!"</span></span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># NOTES:</span>
+<span class="token comment"># when printing out the player we will add 1, this is because we count from 1, computer counts from 0</span>
+<span class="token comment"># points work like in golf, the lower your points the better</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token comment"># initializing the game</span>
+    game_over <span class="token operator">=</span> <span class="token boolean">False</span>
+    os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"&lt; Welcome to shid-games.cum &gt;"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"&lt; You're playing 21! &gt;\n..."</span><span class="token punctuation">)</span>
+    <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span>
+
+    num <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>player_count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment"># ask until the user gives a correct answer</span>
+            <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"The current numbers is </span><span class="token interpolation"><span class="token punctuation">{</span>num<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+                <span class="token comment"># this will change the window title to the player who's turn it is</span>
+                os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"title Player </span><span class="token interpolation"><span class="token punctuation">{</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string">'s turn"</span></span><span class="token punctuation">)</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"player </span><span class="token interpolation"><span class="token punctuation">{</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Pick a number to add: 1-3"</span><span class="token punctuation">)</span>
+                pick <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> pick <span class="token operator">&lt;</span> <span class="token number">1</span> <span class="token keyword">or</span> pick <span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">:</span>
+                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"-- That's not an option --"</span><span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    <span class="token keyword">break</span>
+
+            os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span>
+            num <span class="token operator">+=</span> pick
+                    
+            <span class="token keyword">if</span> num <span class="token operator">&gt;=</span> <span class="token number">21</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Player </span><span class="token interpolation"><span class="token punctuation">{</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">}</span></span><span class="token string"> lost!\n"</span></span><span class="token punctuation">)</span>
+                highscores<span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+                game_over <span class="token operator">=</span> <span class="token boolean">True</span>
+                <span class="token keyword">break</span>
+
+        <span class="token keyword">if</span> game_over <span class="token operator">==</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Do you wish to play again? (Y/n)"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"n"</span><span class="token punctuation">:</span>
+        os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Thanks for playing!"</span><span class="token punctuation">)</span>
+        exit<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
