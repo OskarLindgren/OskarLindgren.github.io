@@ -1,1 +1,147 @@
-Python code for ReferenceChart
+### This python script will show the basics <span class="token keyword">of</span> python<span class="token operator">!</span>
+
+## importing modules
+<span class="token keyword">import</span> os              # <span class="token keyword">import</span> an entire module
+<span class="token keyword">import</span> turtle <span class="token keyword">as</span> tl    # <span class="token keyword">import</span> a module <span class="token keyword">with</span> a nickname
+from time <span class="token keyword">import</span> sleep # <span class="token keyword">import</span> a <span class="token keyword">function</span> from a module
+
+
+## writing Hello World<span class="token operator">!</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span> # python automatically adds a newline at the end <span class="token keyword">of</span> a print statment
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> # we can <span class="token keyword">do</span> <span class="token keyword">this</span> to create a blank line
+
+
+## using variables
+
+# variable_name <span class="token operator">=</span> value
+age <span class="token operator">=</span> <span class="token number">17</span> # <span class="token keyword">this</span> is an int<span class="token punctuation">,</span> python doesn<span class="token string">'t need you to specify types. It figures it out on it'</span>s own
+name <span class="token operator">=</span> <span class="token string">"Oskar"</span> # <span class="token keyword">this</span> is a string
+lastName <span class="token operator">=</span> <span class="token string">'Lindgren'</span> # we can also use single quotes<span class="token operator">!</span>
+favoriteActivities <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Coding"</span><span class="token punctuation">,</span> <span class="token string">"Sleeping"</span><span class="token punctuation">,</span> <span class="token string">"Drinking coffe"</span><span class="token punctuation">]</span> # we can make a list <span class="token keyword">of</span> strings like <span class="token keyword">this</span>
+favoriteNumbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">256</span><span class="token punctuation">]</span> # or a list <span class="token keyword">of</span> numbers like <span class="token keyword">this</span><span class="token operator">!</span>
+favoriteThings <span class="token operator">=</span> <span class="token punctuation">[</span>favoriteActivities<span class="token punctuation">,</span> favoriteNumbers<span class="token punctuation">]</span> # we can even make a list <span class="token keyword">of</span> lists<span class="token operator">!</span> 
+myTuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span> # <span class="token keyword">this</span> is a tuple<span class="token punctuation">,</span> it's often used <span class="token keyword">for</span> coordinates on such
+myLongTuple <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span> # a touple doesn't have to ahve only <span class="token number">2</span> values<span class="token punctuation">,</span> it can have <span class="token keyword">as</span> many <span class="token keyword">as</span> you want<span class="token operator">!</span>
+myFloat <span class="token operator">=</span> <span class="token number">1.2</span> # <span class="token keyword">this</span> is a float<span class="token punctuation">,</span> it's an integer <span class="token keyword">with</span> a little bit more<span class="token operator">!</span>
+
+
+## concatinating variables
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"My name is "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> lastName<span class="token punctuation">)</span> # <span class="token operator">+</span> means that we're adding or <span class="token string">"concatenating"</span> to the string
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"My name is"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> lastName<span class="token punctuation">)</span> # we can also use <span class="token punctuation">,</span> This will add a space by itself
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"My name is"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> lastName<span class="token punctuation">,</span> <span class="token string">"I am"</span><span class="token punctuation">,</span> age<span class="token punctuation">,</span> <span class="token string">"years old!"</span><span class="token punctuation">)</span> # we can even use multiple types <span class="token keyword">of</span> variables<span class="token operator">!</span>
+# but then we can't use <span class="token operator">+</span><span class="token punctuation">.</span> we have to use <span class="token punctuation">,</span>
+# so <span class="token keyword">this</span> wouldn't work<span class="token operator">:</span>
+# <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"My name is "</span> <span class="token operator">+</span> name <span class="token operator">+</span> <span class="token string">" "</span> <span class="token operator">+</span> lastName <span class="token operator">+</span> <span class="token string">" I am "</span> <span class="token operator">+</span> age <span class="token operator">+</span> <span class="token string">" years old!"</span><span class="token punctuation">)</span> 
+# but we can use fstrings<span class="token operator">!</span>
+<span class="token function">print</span><span class="token punctuation">(</span>f<span class="token string">"My name is {name} {lastName} I am {age} years old!"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+## user input
+
+userName <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token string">"What's your name?\n"</span><span class="token punctuation">)</span> # unlike <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> will not add a <span class="token keyword">new</span> <span class="token class-name">line</span><span class="token punctuation">,</span> so we have to <span class="token keyword">do</span> it ourselves 
+# we can also print out the question<span class="token punctuation">,</span> then ask <span class="token keyword">for</span> input
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"How old are you?"</span><span class="token punctuation">)</span>
+userAge <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> # Now we don't have to write the newline
+userAge <span class="token operator">=</span> <span class="token function">int</span><span class="token punctuation">(</span>userAge<span class="token punctuation">)</span> # we wanna make sure that userAge is a number<span class="token punctuation">,</span> or an integer<span class="token operator">!</span>
+# <span class="token punctuation">(</span><span class="token keyword">if</span> the user types something <span class="token keyword">else</span> than a number <span class="token keyword">this</span> will <span class="token keyword">throw</span> an error<span class="token punctuation">,</span> but we'll look at that later<span class="token operator">!</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+## <span class="token keyword">if</span> statments
+
+<span class="token keyword">if</span> userAge <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token operator">:</span> # <span class="token keyword">if</span> userAge is less than <span class="token number">5</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"You're younger than 5!"</span><span class="token punctuation">)</span>
+elif userAge <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token operator">:</span> # <span class="token keyword">if</span> userAge is less than <span class="token constant">OR</span> equal to <span class="token number">10</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"You're still pretty young!"</span><span class="token punctuation">)</span>
+elif <span class="token number">11</span> <span class="token operator">&lt;</span> userAge <span class="token operator">&lt;</span> <span class="token number">20</span><span class="token operator">:</span> # <span class="token keyword">if</span> userAge is between <span class="token number">11</span> and <span class="token number">20</span> <span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">,</span><span class="token number">19</span> <span class="token operator">-</span> <span class="token constant">NOT</span> <span class="token number">11</span> or <span class="token number">20</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"You're between the age of 11 and 20"</span><span class="token punctuation">)</span>
+elif <span class="token number">20</span> <span class="token operator">&lt;=</span> userAge <span class="token operator">&lt;=</span> <span class="token number">25</span><span class="token operator">:</span> # <span class="token keyword">this</span> will take <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">24</span> and <span class="token number">25</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"You're an grown up!"</span><span class="token punctuation">)</span>
+elif userAge <span class="token operator">!=</span> <span class="token number">69</span><span class="token operator">:</span> # <span class="token keyword">this</span> is how we check <span class="token keyword">if</span> something <span class="token constant">ISN</span>'<span class="token constant">T</span> <span class="token boolean">true</span>
+    pass # and <span class="token keyword">this</span> is how we <span class="token keyword">do</span> nothing<span class="token operator">!</span>
+<span class="token keyword">else</span><span class="token operator">:</span> # <span class="token keyword">if</span> none <span class="token keyword">of</span> the above apply
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"You're pretty old!"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+## loops<span class="token operator">!</span>
+
+# <span class="token keyword">for</span> loop
+<span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">:</span> # counting from <span class="token number">1</span> to <span class="token number">10</span> <span class="token punctuation">(</span>stops when it reaches ten<span class="token punctuation">,</span> meaning it won't <span class="token keyword">do</span> anything when it reaches <span class="token number">10</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Loop iteration:"</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+# <span class="token keyword">while</span> loop
+timesRan <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">while</span> <span class="token literal-property property">True</span><span class="token operator">:</span> # will <span class="token keyword">continue</span> forever
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"I'm in a loop"</span><span class="token punctuation">)</span>
+    timesRan <span class="token operator">+=</span> <span class="token number">1</span> # increase timesRan by one
+
+    <span class="token keyword">if</span> timesRan <span class="token operator">&gt;=</span> <span class="token number">5</span><span class="token operator">:</span>
+        <span class="token keyword">break</span> # breaks out fo the loop
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Phew, I broke out of the loop!"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+## functions
+def <span class="token function">myFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> # we make the <span class="token keyword">function</span> like <span class="token keyword">this</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"This is a function!"</span><span class="token punctuation">)</span> # then we tell it what to <span class="token keyword">do</span>
+
+<span class="token function">myFunc</span><span class="token punctuation">(</span><span class="token punctuation">)</span> # then we can call it
+
+# we can pass an argument like <span class="token keyword">this</span>
+def <span class="token function">saySomething</span><span class="token punctuation">(</span>thing_to_say<span class="token operator">:</span>str<span class="token punctuation">)</span><span class="token operator">:</span> # we will use the variable <span class="token string">"thing_to_say"</span> inside the <span class="token keyword">function</span><span class="token punctuation">,</span> then python will forget it<span class="token punctuation">.</span> We're also saying that the variable should only accept inputs <span class="token keyword">of</span> the type string
+    <span class="token function">print</span><span class="token punctuation">(</span>thing_to_say<span class="token punctuation">)</span>
+
+<span class="token function">saySomething</span><span class="token punctuation">(</span><span class="token string">"I like python!"</span><span class="token punctuation">)</span> # then we can call it like <span class="token keyword">this</span>
+<span class="token function">saySomething</span><span class="token punctuation">(</span>thing_to_say<span class="token operator">=</span><span class="token string">"I LOVE python!"</span><span class="token punctuation">)</span> # we can also call it like <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token keyword">this</span> is usefull when a <span class="token keyword">function</span> has multiple arguments
+
+# we can also define a <span class="token string">"default state"</span> like <span class="token keyword">this</span>
+
+def <span class="token function">anotherFunction</span><span class="token punctuation">(</span>argument<span class="token operator">=</span><span class="token string">"Nothing was passed"</span><span class="token punctuation">)</span><span class="token operator">:</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>argument<span class="token punctuation">)</span>
+
+<span class="token function">anotherFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">anotherFunction</span><span class="token punctuation">(</span><span class="token string">"Something was passed!"</span><span class="token punctuation">)</span>
+
+# a <span class="token keyword">function</span> can also <span class="token string">"return"</span> a value
+
+def <span class="token function">addTwoNumbers</span><span class="token punctuation">(</span>num1<span class="token operator">:</span>int<span class="token punctuation">,</span> <span class="token literal-property property">num2</span><span class="token operator">:</span>int<span class="token punctuation">)</span><span class="token operator">:</span>
+    <span class="token keyword">return</span> num1 <span class="token operator">+</span> num2
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">addTwoNumbers</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">)</span> # <span class="token keyword">let</span>'s print out the thing it returns<span class="token operator">!</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+## <span class="token keyword">try</span> statment
+# <span class="token keyword">if</span> something might not always work<span class="token punctuation">,</span> we can use a <span class="token keyword">try</span> statment
+<span class="token keyword">try</span><span class="token operator">:</span> # <span class="token keyword">try</span> to <span class="token keyword">do</span> <span class="token keyword">this</span>
+    temp <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">+</span><span class="token number">1</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"I could add 1+1"</span><span class="token punctuation">)</span>
+except Exception<span class="token operator">:</span> # <span class="token keyword">if</span> it fails<span class="token punctuation">,</span> <span class="token keyword">do</span> <span class="token keyword">this</span> instead
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"I failed to add 1+1 :("</span><span class="token punctuation">)</span>
+<span class="token literal-property property">finally</span><span class="token operator">:</span> # regardless <span class="token keyword">of</span> result<span class="token punctuation">,</span> <span class="token keyword">do</span> <span class="token keyword">this</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Well that's over!"</span><span class="token punctuation">)</span>
+# <span class="token keyword">this</span> will never fail<span class="token punctuation">,</span> because computers are excelent at math<span class="token punctuation">,</span> we'll see later how useful it can be<span class="token operator">!</span>
+
+
+## <span class="token keyword">let</span>'s jump back to the userAge problem<span class="token operator">!</span>
+# we can force the user to only enter a number like <span class="token keyword">this</span><span class="token operator">:</span>
+<span class="token keyword">while</span> <span class="token literal-property property">True</span><span class="token operator">:</span>
+    <span class="token keyword">try</span><span class="token operator">:</span>
+        userAge <span class="token operator">=</span> <span class="token function">int</span><span class="token punctuation">(</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token string">"How old are you?\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> # it will first <span class="token keyword">try</span> <span class="token keyword">this</span>
+        <span class="token keyword">break</span> # then <span class="token keyword">this</span>
+
+    # <span class="token keyword">if</span> at any point it fails<span class="token punctuation">,</span> it will stop trying and to <span class="token keyword">this</span> instead
+    except Exception<span class="token operator">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"That's not a number!"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+## Let's <span class="token keyword">get</span> back to lists<span class="token operator">!</span>
+# we can split a sentance into a lsit <span class="token keyword">of</span> words like <span class="token keyword">this</span>
+sentance <span class="token operator">=</span> <span class="token string">"I really like to write code!"</span>
+words <span class="token operator">=</span> sentance<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span> # split it at every space character
+<span class="token function">print</span><span class="token punctuation">(</span>words<span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Wow, list's look kinda weird, huh?"</span><span class="token punctuation">)</span>
+# we can also grab just one part <span class="token keyword">of</span> a list
+<span class="token function">print</span><span class="token punctuation">(</span>words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> # <span class="token keyword">this</span> will grab the thing at the 0th position
+<span class="token function">print</span><span class="token punctuation">(</span>words<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span> # <span class="token keyword">this</span> will grab the thing at the 3rd position
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
