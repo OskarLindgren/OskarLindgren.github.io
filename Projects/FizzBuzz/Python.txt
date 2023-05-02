@@ -1,16 +1,16 @@
 <span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token operator">**</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-output <span class="token operator">=</span> <span class="token string">""</span>
-                    
-<span class="token comment"># check it against diffrent values</span>
-<span class="token keyword">if</span> n <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-    output <span class="token operator">+=</span> <span class="token string">"Fizz"</span>
-<span class="token keyword">if</span> n <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-    output <span class="token operator">+=</span> <span class="token string">"Buzz"</span>
-<span class="token keyword">if</span> n <span class="token operator">%</span> <span class="token number">8</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-    output <span class="token operator">+=</span> <span class="token string">"Tozz"</span>
-                    
-<span class="token comment"># if none of the above apply</span>
-<span class="token keyword">if</span> output <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
-    output <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-                    
-<span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span>
+    output <span class="token operator">=</span> <span class="token string">""</span>
+                        
+    <span class="token comment"># check it against diffrent values</span>
+    <span class="token keyword">if</span> n <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        output <span class="token operator">+=</span> <span class="token string">"Fizz"</span>
+    <span class="token keyword">if</span> n <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        output <span class="token operator">+=</span> <span class="token string">"Buzz"</span>
+    <span class="token keyword">if</span> n <span class="token operator">%</span> <span class="token number">8</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        output <span class="token operator">+=</span> <span class="token string">"Tozz"</span>
+                        
+    <span class="token comment"># if none of the above apply</span>
+    <span class="token keyword">if</span> output <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        output <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+                        
+    <span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span>
