@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Oskar Lindgren</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./syntaxing.css">
+</head>
+
+<body>
+    <main>
+        <!-- Landing Page -->
+        <div id="landingPage">
+            <span id="Title">_</span>
+            <img class="profilePictures" id="profilePicture2" src="./images/pfp.png">
+            <img class="profilePictures" id="profilePicture1" src="./images/pfp.gif">
+            <div style="opacity: 0;" id="arrow0" class="scrollArrow" onclick="scrollNext()"></div>
+        </div>
+
+        <!-- Skills -->
+        <div id="skillsPage">
+            <!-- Education -->
+            <div style="left:-50%" id="educationContainer" class="experienceContainer">
+                <span class="skillTitle">Education</span>
+                <br><br>
+                <span class="skillContent">
+                    My gradeschool education was completed mostly in Sweden but with 2.5 years in South Africa at AISJ.
+                    <br><br>
+                    I went to highschool at the Nordic Institute of Technology.
+                    <br><br>
+                    I am yet to get any college degree, only time will tell!
+                    <br><br>
+                    Most of my programming knowlage has been learned throught countless hours of trial and error and
+                    online courses.
+                </span>
+            </div>
+            <!-- lvl 1-5 indicates proficiency. Shown by size -->
+            <div id="skillsList">
+                <a class="lvl5 aSkill" style="left:50%; top:50%;" href="https://www.python.org/"> Python</a>
+                <a class="lvl4 aSkill" style="left:65%; top:80%;" href="https://ifttt.com/explore"> IFTTT</a>
+                <a class="lvl4 aSkill" style="left:35%; top:-50%;" href="https://www.cprogramming.com/"> C</a>
+                <a class="lvl3 aSkill" style="left:100%; top:15%;" href="https://www.w3schools.com/css/"> Css</a>
+                <a class="lvl3 aSkill" style="left:40%; top:150%;" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"> JavaScript</a>
+                <a class="lvl3 aSkill" style="left:0%; top:70%;" href="https://www.linux.org/"> Linux</a>
+                <a class="lvl3 aSkill" style="left:60%; top:0%;" href="https://nodejs.org/en"> NodeJS</a>
+                <a class="lvl2 aSkill" style="left:0%; top:54%;" href="https://www.mysql.com/"> MySQL</a>
+                <a class="lvl2 aSkill" style="left:150%; top:10%;" href="https://unity.com/"> Unity</a>
+                <a class="lvl2 aSkill" style="left:200%; top:100%;" href="https://www.w3.org/html/"> HTML</a>
+                <a class="lvl1 aSkill" style="left:-50%; top:100%;" href="https://www.java.com/en/"> Java</a>
+            </div>
+            <!-- Work History -->
+            <div style="left:200%" id="workContainer" class="experienceContainer">
+                <span class="skillTitle">Work History</span>
+                <br><br>
+                <span class="skillContent">
+                    During 8th grade I had two internships for one week each.
+                    <br><br>
+                    Week 1 was spent at "Tom-Tits Experiments" doing mostly quality assurance.
+                    <br><br>
+                    Week 2 was spent at Scanias IT depertment where I mostly shadowed IT technitians as they completed
+                    tickets around the offices.
+                    <br><br>
+                    At 17 I got a 3½ month contract at "Kits Insperation AB" where I was in charge of all IT &
+                    Administrive issues aswell as automation of posts throught an API-less network.
+                </span>
+            </div>
+            <div style="opacity: 0;" id="arrow1" class="scrollArrow" onclick="scrollNext()"></div>
+        </div>
+        <!-- Projects -->
+        <div id="projectsPage">
+            <div id="projectsContainer">
+                <div class="project" id="FizzBuzz">
+                    <span id="projectTitle">FizzBuzz</span>
+                    <div class="projectNavBar">
+                        <div onclick="getCode('FizzBuzz', 'Python')" class="languageButton" id="buttonPython">Python
+                        </div>
+                        <div onclick="getCode('FizzBuzz', 'JavaScript')" class="languageButton" id="buttonJavaScript">
+                            JavaScript</div>
+                        <div onclick="getCode('FizzBuzz', 'C')" class="languageButton" id="buttonC">C</div>
+                    </div>
+                    <div class="projectCode">
+                        <pre><code id="code_FizzBuzz" class=""></code></pre>
+                    </div>
+                </div>
+                <div class="project" id="TwentyOne">
+                    <span id="projectTitle">TwentyOne</span>
+                    <div class="projectNavBar">
+                        <div onclick="getCode('TwentyOne', 'Python')" class="languageButton" id="buttonPython">Python
+                        </div>
+                        <div onclick="getCode('TwentyOne', 'JavaScript')" class="languageButton" id="buttonJavaScript">
+                            JavaScript</div>
+                        <div onclick="getCode('TwentyOne', 'C')" class="languageButton" id="buttonC">C</div>
+                    </div>
+                    <div class="projectCode">
+                        <pre><code id="code_TwentyOne" class=""></code></pre>
+                    </div>
+                </div>
+                <div class="project" id="ReferenceChart">
+                    <span id="projectTitle">ReferenceChart</span>
+                    <div class="projectNavBar">
+                        <div onclick="getCode('ReferenceChart', 'Python')" class="languageButton" id="buttonPython">
+                            Python</div>
+                        <div onclick="getCode('ReferenceChart', 'JavaScript')" class="languageButton"
+                            id="buttonJavaScript">JavaScript</div>
+                        <div onclick="getCode('ReferenceChart', 'C')" class="languageButton" id="buttonC">C</div>
+                    </div>
+                    <div class="projectCode">
+                        <pre><code id="code_ReferenceChart" class=""></code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="projectDescriptionContainer">
+                <div class="projectDescription">
+                    <span class="projectDescriptionContent">This is a fairly simple program whos purpose is to show that I understands loops to a good degree and knows how to output multiple things to the console in a easy to understand format</span>
+                </div>
+                <div class="projectDescription">
+                    <span class="projectDescriptionContent">This program is based on the childhood game "twenty one" and shows that I understands how to take user input but also how to properly handle multiple variables aswell as unknown amounts of variables</span>
+                </div>
+                <div class="projectDescription">
+                    <span class="projectDescriptionContent">This program shows basic programming tasks in different languages, serving as a helpful resource for beginners while also validating my own understanding. It presents common tasks across various languages to assist with learning.</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./script.js"></script>
+
+</html>

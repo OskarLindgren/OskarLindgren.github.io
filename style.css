@@ -1,0 +1,408 @@
+@font-face {
+    font-family: "stormy";
+    src: url("./fonts/RubikStorm-Regular.ttf");
+}
+
+@font-face {
+    font-family: "scifi";
+    src: url("./fonts/BrunoAce-Regular.ttf");
+}
+
+@font-face {
+    font-family: "handy";
+    src: url("./fonts/Alkatra-Regular.ttf");
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        transform: translate(-50%, -100%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+:root {
+    --color0: rgb(16, 16, 16);
+    --color1: rgb(26, 26, 26);
+    --color2: rgb(50, 50, 50);
+    --color3: rgb(112, 112, 112);
+    --color4: rgb(161, 161, 161);
+    --color5: rgb(0, 105, 97);
+    --color6: rgb(175, 105, 97);
+    --color7: rgb(255, 105, 97);
+    --color8: rgb(250, 69, 50);
+    --color9: rgb(202, 33, 14);
+    --color10: rgb(255, 255, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: var(--color0);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#landingPage {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.profilePictures {
+    position: absolute;
+    width: 40vh;
+    height: 40vh;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 66%;
+}
+
+#profilePicture1, #profilePicture2 {
+    display: block;
+}
+
+#Title {
+    color: var(--color5);
+    font-size: 6.9vh;
+    font-family: "scifi";
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    text-align: center;
+    width: 80%;
+}
+
+.scrollArrow {
+    opacity: 1;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 1.6vh solid transparent;
+    border-right: 1.6vh solid transparent;
+    border-top: 3.2vh solid var(--color4);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 98%;
+    animation: bounce 1.25s ease-in-out infinite;
+    transition: opacity .5s ease-in-out;
+}
+
+#skillsPage {
+    background-color: var(--color1);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 100%;
+}
+
+#skillsPage * {
+    transition: all .75s cubic-bezier(0, 1, 1, 1);
+}
+
+/* SKILLS */
+#skillsPage a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: #000000;
+    font-family: "stormy";
+    text-shadow:
+        1px 1px 3px var(--color5),
+        -1px 1px 3px var(--color5),
+        1px -1px 3px var(--color5),
+        -1px -1px 3px var(--color5);
+}
+
+#skillsPage a:hover {
+    filter: saturate(500%);
+}
+
+#skillsPage a {
+    color: var(--color9);
+}
+
+#skillsPage a:nth-child(4n+3) {
+    color: var(--color6);
+}
+
+#skillsPage a:nth-child(3n+2) {
+    color: var(--color7);
+}
+
+#skillsPage a:nth-child(5n+1) {
+    color: var(--color8);
+}
+
+/* proficiency */
+.lvl1 {
+    font-size: 30px;
+}
+
+.lvl2 {
+    font-size: 40px;
+}
+
+.lvl3 {
+    font-size: 58px;
+}
+
+.lvl4 {
+    font-size: 70px;
+}
+
+.lvl5 {
+    font-size: 90px;
+}
+
+#skillsList {
+    position: absolute;
+    word-wrap: normal;
+    transform: translate(-45%, -65%);
+    left: 50%;
+    top: 50%;
+    width: 850px;
+    height: 450px;
+    opacity: 1;
+}
+
+.aSkill {
+    opacity: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.experienceContainer {
+    transform: translate(-50%);
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 40vw;
+    height: 30vh;
+}
+
+.experienceContainer * {
+    opacity: 0;
+    position: absolute;
+}
+
+.skillTitle {
+    font-family: "scifi";
+    font-size: 5.6vh;
+    color: var(--color10);
+    transform: translate(-50%);
+    left: 50%;
+}
+
+.skillContent {
+    line-height: 2.1vh;
+    font-family: "handy";
+    font-size: 1.9vh;
+    color: var(--color4);
+    top: 25%;
+}
+
+#workContainer {
+    top: 65%;
+}
+
+
+#projectsPage {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 200%;
+}
+
+#projectsContainer {
+    width: 95vw;
+    height: 75vh;
+    position: absolute;
+    top: 4.5vh;
+    left: -102.5vw;
+    justify-content: space-evenly;
+    display: flex;
+    transition: left .75s cubic-bezier(.1, 1.15, .8, 1.1);
+}
+
+#projectsContainer > * {
+    opacity: 0;
+    transition: opacity .75s cubic-bezier(0, 1, 1, 1);
+}
+
+.project {
+    width: 28%;
+    height: 100%;
+    background-color: var(--color1);
+    border: 0.2vh solid var(--color8);
+    background-color: #272822;
+}
+
+#projectTitle {
+    color: var(--color10);
+    font-family: "scifi";
+    font-size: 3.9vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 5% 0 3% 0;
+    background-color: var(--color2);
+    border-bottom: 0.2vh solid var(--color5);
+}
+
+.projectNavBar {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color1);
+    padding-bottom: 0.6vh;
+    border-bottom: 0.2vh solid var(--color5);
+}
+
+.languageButton {
+    color: var(--color4);
+    font-size: 3.2vh;
+    height: 3.2vh;
+    font-family: "handy";
+    padding: 0px 1.3vh 1.3vh 1.3vh;
+    border-right: 1px solid var(--color7);
+    border-left: 1px solid var(--color7);
+    margin-left: -1px;
+    transition: all .15s ease-in-out;
+}
+
+.languageButton:hover,
+.languageButton:active {
+    color: var(--color10);
+}
+
+.projectCode {
+    background-color: #272822;
+    overflow: scroll;
+    height: 80.6%;
+    width: 98%;
+    word-wrap: normal;
+    margin: 1%;
+}
+
+/* Scrollbar */
+.projectCode::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.projectCode::-webkit-scrollbar-thumb {
+    background-color: var(--color3);
+    border-radius: 20px;
+}
+
+.projectCode::-webkit-scrollbar-track,
+.projectCode::-webkit-scrollbar-corner,
+.projectCode::-webkit-scrollbar-button {
+    display: none;
+}
+
+.projectDescriptionContainer {
+    position: absolute;
+    height: 15vh;
+    width: 95vw;
+    bottom: 5%;
+    left: 2.5vw;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.projectDescription {
+    width: 28%;
+    position: relative;
+}
+
+.projectDescriptionContent {
+    position: absolute;
+    transform: translate(-50%);
+    left: 50%;
+    top: 2.5vh;
+    font-size: 1.8vh;
+    color: var(--color4);
+    font-family: "handy";
+    width: 90%;
+    word-wrap: normal;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .75s .95s cubic-bezier(0, 1, 1, 1);
+}
+
+@media (orientation: portrait) {
+    .scrollArrow {
+        border-left: 2.5vh solid transparent;
+        border-right: 2.5vh solid transparent;
+        border-top: 5vh solid var(--color4);
+        left: 50%;
+        top: 96%;
+        animation: bounce 1.25s ease-in-out infinite;
+        transition: opacity .5s ease-in-out;
+    }
+
+    .experienceContainer {
+        width: 55vh;
+        height: 28vh;
+        transition: all .75s .35s cubic-bezier(0, 1, 1, 1) !important;
+    }
+
+    .skillTitle {
+        transform: translate(-50%, -20%);
+    }
+
+    #projectsContainer {
+        height: 95vh;
+        top: 3vh;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .project {
+        position: relative;
+        left: 0;
+        width: 75%;
+        height: 30%;
+    }
+
+    #projectTitle {
+        padding: 1% 0 1% 0;
+    }
+
+    .projectNavBar {
+        height: 12.5%;
+        padding: 0;
+    }
+
+    .languageButton {
+        font-size: 3vh;
+        padding: 0px 1.3vh 0 1.3vh;
+        position: relative;
+        line-height: 4vh;
+        height: 100%;
+    }
+
+    .projectCode {
+        height: max-content;
+    }
+
+}
