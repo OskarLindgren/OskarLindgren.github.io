@@ -88,7 +88,8 @@ timesRan <span class="token operator">=</span> <span class="token number">0</spa
 myFunc<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># then we can call it</span>
 
 <span class="token comment"># we can pass an argument like this</span>
-<span class="token keyword">def</span> <span class="token function">saySomething</span><span class="token punctuation">(</span>thing_to_say<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># we will use the variable "thing_to_say" inside the function, then python will forget it. We're also saying that the variable should only accept inputs of the type string</span>
+<span class="token comment"># we will use the variable "thing_to_say" inside the function, then python will forget it. We're also saying that the variable should only accept inputs of the type string</span>
+<span class="token keyword">def</span> <span class="token function">saySomething</span><span class="token punctuation">(</span>thing_to_say<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>thing_to_say<span class="token punctuation">)</span>
 
 saySomething<span class="token punctuation">(</span><span class="token string">"I like python!"</span><span class="token punctuation">)</span> <span class="token comment"># then we can call it like this</span>
